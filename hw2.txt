@@ -54,9 +54,9 @@
 ;-------Problem 7--------
 ;If you let A = {a,aa,aaa} and B = {aaaa, aaaaa, aaaaaa}, then:
 ;CONCAT(A,B) = {aaaaa, aaaaaa, aaaaaaa, aaaaaa, aaaaaaa, aaaaaaaa, 
-		aaaaaaa, aaaaaaaa, aaaaaaaaa}
+;		aaaaaaa, aaaaaaaa, aaaaaaaaa}
 ;CONCAT(B,A) = {aaaaa, aaaaaa, aaaaaaa, aaaaaa, aaaaaaa, aaaaaaaa,
-		aaaaaaa, aaaaaaaa, aaaaaaaaa}
+;		aaaaaaa, aaaaaaaa, aaaaaaaaa}
 
 ; So CONCAT(A,B) == CONCAT(B,A)
 
