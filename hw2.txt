@@ -44,10 +44,30 @@
 
 ;-------Problem 6--------
 (defn concat-L-A [L A]
-  (concat (cons L '()) A))
+  (if (empty? L)
+    '()
+    (concat
+      (map (fn [x] (concat (first L) x))
+        A)
+      (concat-L-A (rest L) A))))
+
+;-------Problem 7--------
+;If you let A = {a,aa,aaa} and B = {aaaa, aaaaa, aaaaaa}, then:
+;CONCAT(A,B) = {aaaaa, aaaaaa, aaaaaaa, aaaaaa, aaaaaaa, aaaaaaaa, 
+		aaaaaaa, aaaaaaaa, aaaaaaaaa}
+;CONCAT(B,A) = {aaaaa, aaaaaa, aaaaaaa, aaaaaa, aaaaaaa, aaaaaaaa,
+		aaaaaaa, aaaaaaaa, aaaaaaaaa}
+
+; So CONCAT(A,B) == CONCAT(B,A)
 
 ;-------Problem 8--------
-;Let A = a^3, where the elements of A are {a, aa, aaa}
-;Now let B = b^3, where the elements of B are {b, bb, bbb}
-;Then concat(A,B) = {a, aa, aaa, b, bb, bbb} while:
-;concat(B,A) = {b, bb, bbb, a, aa, aaa}
+;If you let A = {a,aa,aaa} and B = {b,bb,bbb}, then: 
+;CONCAT(A,B) = {ab, abb, abbb, aab, aabb, aabbb, aaab, aaabb, aaabbb}
+;CONCAT(B,A) = {ba, baa, baaa, bba, bbaa, bbaaa, bbba, bbbaa, bbbaaa}
+
+; So CONCAT(A,B) != CONCAT(B,A)
+
+;-------Problem 9--------
+L = {a, aa, aaa, aaa, aaaa, ...}
+
+
